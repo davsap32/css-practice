@@ -12,7 +12,10 @@ setInterval(function () {
   //const now = new Date();
   //console.log(now);
 }, 1000);
-const arr = ["bling", "bonk", "bonk2"];
+const arr = [];
+for (let i = 0; i < 25; i++) {
+  arr.push(`this is number ${i.toString().padStart(2, "0")}`);
+}
 arr.forEach((element) => {
-  contentSmall1.insertAdjacentHTML("afterbegin", `<p>${element}</p>`);
+  contentSmall1.insertAdjacentHTML("beforeend", `<p>${element}</p>`);
 });
