@@ -1,7 +1,8 @@
 const contentLarge = document.querySelector(".content-large");
+const contentClock = document.querySelector(".clock");
 const contentSmall1 = document.querySelector(".content-small-1");
 setInterval(function () {
-  contentLarge.textContent = new Intl.DateTimeFormat("en-SE", {
+  contentClock.textContent = new Intl.DateTimeFormat("en-SE", {
     year: "numeric",
     month: "numeric",
     day: "numeric",
