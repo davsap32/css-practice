@@ -1,17 +1,19 @@
 const contentLarge = document.querySelector(".content-large");
 const contentClock = document.querySelector(".clock");
 const contentSmall1 = document.querySelector(".content-small-1");
-setInterval(function () {
-  contentClock.textContent = new Intl.DateTimeFormat("en-SE", {
+const showClock = function(){
+	contentClock.textContent = new Intl.DateTimeFormat("en-SE", {
     year: "numeric",
     month: "numeric",
     day: "numeric",
     hour: "numeric",
     minute: "numeric",
     second: "numeric",
-  }).format(new Date());
-  //const now = new Date();
-  //console.log(now);
+}).format(new Date());
+}
+showClock();
+setInterval(function () {
+	showClock();
 }, 1000);
 const arr = [];
 for (let i = 0; i < 25; i++) {
