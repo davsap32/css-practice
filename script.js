@@ -6,6 +6,7 @@ const showClock = function () {
     year: "numeric",
     month: "numeric",
     day: "numeric",
+    weekday: "short",
     hour: "numeric",
     minute: "numeric",
     second: "numeric",
@@ -13,11 +14,11 @@ const showClock = function () {
   //contentClock.style.color = 'green';
 };
 showClock();
-let color;
+let clockColor;
 setInterval(function () {
   showClock();
-  color = color !== "green" ? "green" : "red";
-  contentClock.style.color = color;
+  clockColor = clockColor !== "green" ? "green" : "red";
+  contentClock.style.color = clockColor;
 }, 1000);
 const arr = [];
 for (let i = 0; i < 25; i++) {
