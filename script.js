@@ -20,10 +20,14 @@ setInterval(function () {
   clockColor = clockColor !== "green" ? "green" : "red";
   contentClock.style.color = clockColor;
 }, 1000);
-const arr = [];
+//const arr = [];
+//for (let i = 0; i < 25; i++) {
+//  arr.push(`this is number ${i.toString().padStart(2, "0")}`);
+//}
+const textColor = ["green", "red", "blue", "grey", "purple"];
 for (let i = 0; i < 25; i++) {
-  arr.push(`this is number ${i.toString().padStart(2, "0")}`);
+  const textInsert = `<p style="color:${
+    textColor[i % textColor.length]
+  }">This is line number ${i.toString().padStart(2, "0")}</p>`;
+  contentSmall1.insertAdjacentHTML("beforeend", textInsert);
 }
-arr.forEach((element) => {
-  contentSmall1.insertAdjacentHTML("beforeend", `<p>${element}</p>`);
-});
