@@ -10,13 +10,21 @@ const showClock = function(){
 	    minute: "numeric",
 	    second: "numeric",
 	}).format(new Date());
-	contentClock.style.color = 'green';
+	//contentClock.style.color = 'green';
 }
 showClock();
+let flag=0;
 setInterval(function () {
 	showClock();
-	if(contentClock.style.color === 'green')contentClock.style.color = 'red'
-	else contentClock.style.color = 'green'
+	if(!flag){
+		contentClock.style.color = 'red';
+		flag = 1;
+	}
+	else {
+		contentClock.style.color = 'green'
+		flag = 0;
+	}
+	
 }, 1000);
 const arr = [];
 for (let i = 0; i < 25; i++) {
