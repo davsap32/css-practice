@@ -11,23 +11,21 @@ const showClock = function () {
     minute: "numeric",
     second: "numeric",
   }).format(new Date());
-  //contentClock.style.color = 'green';
 };
 showClock();
-let clockColor;
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)})`;
+//let clockColor;
 setInterval(function () {
   showClock();
-  clockColor = clockColor !== "green" ? "green" : "red";
-  contentClock.style.color = clockColor;
+  contentClock.style.color = randomColor();
 }, 1000);
-//const arr = [];
-//for (let i = 0; i < 25; i++) {
-//  arr.push(`this is number ${i.toString().padStart(2, "0")}`);
-//}
-const textColor = ["green", "red", "blue", "grey", "purple"];
+
 for (let i = 0; i < 25; i++) {
-  const textInsert = `<p style="color:${
-    textColor[i % textColor.length]
-  }">This is line number ${i.toString().padStart(2, "0")}</p>`;
+  const textInsert = `<p style="color:${randomColor()}">This is line number ${i
+    .toString()
+    .padStart(2, "0")}</p>`;
   contentSmall1.insertAdjacentHTML("beforeend", textInsert);
 }

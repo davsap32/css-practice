@@ -39,6 +39,7 @@ body {
 .content-small-1 {
   grid-auto-flow: row;
   overflow: scroll;
+  line-height: 8px;
 }
 .footer {
   grid-column: 1 / span 3;
